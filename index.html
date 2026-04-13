@@ -3,11 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organisation Data</title>
+    <title>Somalia Aid Intelligence Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Organisation Data</h1>
-    <p>This section contains information about the organization and its projects aimed at aid and development in Somalia.</p>
-    <!-- Add more content here as necessary from Organisationdata -->
+    <header>
+        <h1>Somalia Aid Intelligence Dashboard</h1>
+        <div id="filter">
+            <label for="tier-select">Filter by Tier:</label>
+            <select id="tier-select">
+                <option value="all">All</option>
+                <option value="tier1">Tier 1</option>
+                <option value="tier2">Tier 2</option>
+                <option value="tier3">Tier 3</option>
+            </select>
+            <label for="region-select">Filter by Region:</label>
+            <select id="region-select">
+                <option value="all">All</option>
+                <option value="north">North</option>
+                <option value="south">South</option>
+                <option value="central">Central</option>
+            </select>
+            <label for="thematic-cluster-select">Filter by Thematic Cluster:</label>
+            <select id="thematic-cluster-select">
+                <option value="all">All</option>
+                <option value="education">Education</option>
+                <option value="health">Health</option>
+                <option value="emergency">Emergency</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <div id="map-container">
+            <!-- Map regions will be dynamically inserted here -->
+        </div>
+        <div id="organization-data">
+            <!-- Organization data for 113 organizations will be displayed here -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Somalia Aid Intelligence</p>
+    </footer>
+    <script>
+        // JavaScript for filtering logic
+        document.getElementById('tier-select').addEventListener('change', filterOrganizations);
+        document.getElementById('region-select').addEventListener('change', filterOrganizations);
+        document.getElementById('thematic-cluster-select').addEventListener('change', filterOrganizations);
+
+        function filterOrganizations() {
+            const tier = document.getElementById('tier-select').value;
+            const region = document.getElementById('region-select').value;
+            const thematicCluster = document.getElementById('thematic-cluster-select').value;
+            // Logic to filter organization data by selected criteria
+        }
+    </script>
 </body>
 </html>
